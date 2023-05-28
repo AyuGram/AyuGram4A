@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="AyuPreferences">Ayu Preferences</string>
+
+    <string name="GhostEssentialsHeader">Ghost essentials</string>
+    <string name="SendReadPackets">Send read status</string>
+    <string name="SendOnlinePackets">Send online status</string>
+    <string name="SendUploadProgress">Send typing &amp; upload status</string>
+    <string name="SendOfflinePacketAfterOnline">Immediate offline after online</string>
+    <string name="MarkReadAfterSend">Send read status after reply</string>
+    <string name="UseScheduledMessages">Schedule messages</string>
+
+    <string name="SpyEssentialsHeader">Spy essentials</string>
+    <string name="KeepDeletedMessages">Keep deleted messages</string>
+    <string name="KeepMessagesHistory">Keep edits history</string>
+
+    <string name="QoLTogglesHeader">QoL toggles</string>
+    <string name="RealForwardTime">Show real forward time</string>
+    <string name="ShowFromChannel">Show «channel» label</string>
+    <string name="KeepAliveService">Keep Alive Service</string>
+    <string name="WALMode">Enable WAL mode</string>
+
+    <string name="CustomizationHeader">Customization</string>
+    <string name="DeletedMarkText">Deleted mark</string>
+
+    <string name="EditsHistoryTitle">Edits history</string>
+    <string name="EditsHistoryMenuText">History</string>
+    <string name="LikelyOfflineStatus">likely offline</string>
+</resources>
