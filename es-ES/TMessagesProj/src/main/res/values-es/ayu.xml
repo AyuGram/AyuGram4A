@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="AyuPreferences">Preferencias de la AyuGram</string>
+    <string name="GhostEssentialsHeader">Lo esencial del modo fantasma</string>
+    <string name="SendReadPackets">Enviar estado de \"mensaje leído\"</string>
+    <string name="SendOnlinePackets">Enviar estado \"en línea\"</string>
+    <string name="SendUploadProgress">Enviar estados de \"escribiendo\" y \"cargando\"</string>
+    <string name="SendOfflinePacketAfterOnline">Inmediatamente fuera de línea después de estar en línea</string>
+    <string name="MarkReadAfterSend">Enviar estado de lectura después de responder al mensaje</string>
+    <string name="UseScheduledMessages">Programar mensajes</string>
+    <string name="SpyEssentialsHeader">Esenciales de espionaje</string>
+    <string name="KeepDeletedMessages">Mantener mensajes eliminados</string>
+    <string name="KeepMessagesHistory">Mantener el historial de ediciones</string>
+    <string name="QoLTogglesHeader">QoL alterna</string>
+    <string name="RealForwardTime">Mostrar la hora en que se escribió el mensaje reenviado</string>
+    <string name="ShowFromChannel">Mostrar etiqueta de «canal»</string>
+    <string name="KeepAliveService">Mantener vivo el servicio</string>
+    <string name="WALMode">Habilitar el modo WAL</string>
+    <string name="CustomizationHeader">Personalización</string>
+    <string name="DeletedMarkText">La marca de mensaje eliminado</string>
+    <string name="EditsHistoryTitle">Historial de ediciones</string>
+    <string name="EditsHistoryMenuText">Historia</string>
+    <string name="LikelyOfflineStatus">offline ?</string>
+</resources>
