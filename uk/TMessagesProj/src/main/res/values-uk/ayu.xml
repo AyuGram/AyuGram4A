@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="AyuPreferences">Налаштування AyuGram</string>
+    <string name="GhostEssentialsHeader">Налаштування режиму привида</string>
+    <string name="SendReadPackets">Відправляти статус \"Прочитано\"</string>
+    <string name="SendOnlinePackets">Відправляти статус \"Онлайн\"</string>
+    <string name="SendUploadProgress">Відправляти статуси \"друкую\" &amp; \"відвантажую\"</string>
+    <string name="SendOfflinePacketAfterOnline">Офлайн одразу після онлайну</string>
+    <string name="MarkReadAfterSend">Відправляти статус \"Прочитано\" після відповіді</string>
+    <string name="UseScheduledMessages">Планувати повідомлення</string>
+    <string name="SpyEssentialsHeader">Налаштування шпигунства</string>
+    <string name="KeepDeletedMessages">Зберігати видалені повідомлення</string>
+    <string name="KeepMessagesHistory">Зберігати історію редагувань</string>
+    <string name="QoLTogglesHeader">Перемикачі QoL</string>
+    <string name="RealForwardTime">Відображати час написання пересланого повідомлення</string>
+    <string name="ShowFromChannel">Відображати надпис «канал»</string>
+    <string name="KeepAliveService">Підтримувати службу у фоновому режимі</string>
+    <string name="WALMode">Увімкнути режим WAL</string>
+    <string name="CustomizationHeader">Персоналізація</string>
+    <string name="DeletedMarkText">Позначка на видаленому повідомленні</string>
+    <string name="EditsHistoryTitle">Історія редагувань</string>
+    <string name="EditsHistoryMenuText">Історія</string>
+    <string name="LikelyOfflineStatus">оффлайн ?</string>
+</resources>
