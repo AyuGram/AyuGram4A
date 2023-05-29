@@ -3,9 +3,9 @@
     <string name="AyuPreferences">Preferencias de la AyuGram</string>
 
     <string name="GhostEssentialsHeader">Lo esencial del modo fantasma</string>
-    <string name="SendReadPackets">Enviar estado de "mensaje leído"</string>
-    <string name="SendOnlinePackets">Enviar estado "en línea"</string>
-    <string name="SendUploadProgress">Enviar estados de "escribiendo" y "cargando"</string>
+    <string name="SendReadPackets">Enviar estado de «mensaje leído»</string>
+    <string name="SendOnlinePackets">Enviar estado «en línea»</string>
+    <string name="SendUploadProgress">Enviar estados de «escribiendo» y «cargando»</string>
     <string name="SendOfflinePacketAfterOnline">Inmediatamente fuera de línea después de estar en línea</string>
     <string name="MarkReadAfterSend">Enviar estado de lectura después de responder al mensaje</string>
     <string name="UseScheduledMessages">Programar mensajes</string>

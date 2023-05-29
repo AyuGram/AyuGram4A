@@ -4,9 +4,9 @@
 
     <string name="GhostEssentialsHeader">Режим призрака</string>
     <string name="SendReadPackets">Помечать сообщения прочитанными</string>
-    <string name="SendOnlinePackets">Отправлять онлайн статус</string>
-    <string name="SendUploadProgress">Отправлять "печатает" &amp; "загружает"</string>
-    <string name="SendOfflinePacketAfterOnline">Отправлять "офлайн" после появления в сети</string>
+    <string name="SendOnlinePackets">Отправлять «онлайн» статус</string>
+    <string name="SendUploadProgress">Отправлять «печатает» &amp; «загружает»</string>
+    <string name="SendOfflinePacketAfterOnline">Отправлять «оффлайн» после появления в сети</string>
     <string name="MarkReadAfterSend">Читать после ответа</string>
     <string name="UseScheduledMessages">Использовать отложку</string>
 

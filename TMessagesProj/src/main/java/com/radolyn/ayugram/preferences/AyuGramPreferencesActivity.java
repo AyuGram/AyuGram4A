@@ -21,6 +21,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.exteragram.messenger.ExteraConfig;
 import com.exteragram.messenger.preferences.BasePreferencesActivity;
 
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.Cells.EditTextSettingsCell;
 import org.telegram.ui.Cells.HeaderCell;
@@ -115,7 +117,7 @@ public class AyuGramPreferencesActivity extends BasePreferencesActivity {
             ((TextCheckCell) view).setChecked(ExteraConfig.walMode);
         } else if (position == deletedMarkText) {
             var builder = new AlertDialog.Builder(getParentActivity());
-            builder.setTitle("Change deleted mark text");
+            builder.setTitle(LocaleController.getString("DeletedMarkText", R.string.DeletedMarkText));
             var layout = new LinearLayout(getParentActivity());
             var input = new EditTextSettingsCell(getParentActivity());
             input.setText(ExteraConfig.getDeletedMark(), true);
@@ -123,11 +125,11 @@ public class AyuGramPreferencesActivity extends BasePreferencesActivity {
             layout.setGravity(LinearLayout.VERTICAL);
             layout.addView(input);
             builder.setView(layout);
-            builder.setPositiveButton("Save", (dialog, which) -> {
+            builder.setPositiveButton(LocaleController.getString("Save", R.string.Save), (dialog, which) -> {
                 ExteraConfig.editor.putString("deletedMarkText", input.getText()).apply();
-                ((TextCell) view).setTextAndValue("Deleted mark text", ExteraConfig.getDeletedMark(), true);
+                ((TextCell) view).setTextAndValue(LocaleController.getString("DeletedMarkText", R.string.DeletedMarkText), ExteraConfig.getDeletedMark(), true);
             });
-            builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
+            builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), (dialog, which) -> dialog.cancel());
 
             builder.show();
         }
@@ -135,7 +137,7 @@ public class AyuGramPreferencesActivity extends BasePreferencesActivity {
 
     @Override
     protected String getTitle() {
-        return "AyuGram Preferences";
+        return LocaleController.getString("AyuPreferences", R.string.AyuPreferences);
     }
 
     @Override
@@ -160,48 +162,48 @@ public class AyuGramPreferencesActivity extends BasePreferencesActivity {
                 case 2:
                     TextCell textCell = (TextCell) holder.itemView;
                     if (position == deletedMarkText) {
-                        textCell.setTextAndValue("Deleted mark", ExteraConfig.getDeletedMark(), true);
+                        textCell.setTextAndValue(LocaleController.getString("DeletedMarkText", R.string.DeletedMarkText), ExteraConfig.getDeletedMark(), true);
                     }
                     break;
                 case 3:
                     HeaderCell headerCell = (HeaderCell) holder.itemView;
                     if (position == ghostEssentialsHeaderRow) {
-                        headerCell.setText("Ghost essentials");
+                        headerCell.setText(LocaleController.getString("GhostEssentialsHeader", R.string.GhostEssentialsHeader));
                     } else if (position == spyHeaderRow) {
-                        headerCell.setText("Spy essentials");
+                        headerCell.setText(LocaleController.getString("SpyEssentialsHeader", R.string.SpyEssentialsHeader));
                     } else if (position == qolHeaderRow) {
-                        headerCell.setText("QoL toggles");
+                        headerCell.setText(LocaleController.getString("QoLTogglesHeader", R.string.QoLTogglesHeader));
                     } else if (position == customizationHeaderRow) {
-                        headerCell.setText("Customization");
+                        headerCell.setText(LocaleController.getString("CustomizationHeader", R.string.CustomizationHeader));
                     }
                     break;
                 case 5:
                     TextCheckCell textCheckCell = (TextCheckCell) holder.itemView;
                     textCheckCell.setEnabled(true, null);
                     if (position == sendReadPacketsRow) {
-                        textCheckCell.setTextAndCheck("Send read status", ExteraConfig.sendReadPackets, true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("SendReadPackets", R.string.SendReadPackets), ExteraConfig.sendReadPackets, true);
                     } else if (position == sendOnlinePacketsRow) {
-                        textCheckCell.setTextAndCheck("Send online status", ExteraConfig.sendOnlinePackets, true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("SendOnlinePackets", R.string.SendOnlinePackets), ExteraConfig.sendOnlinePackets, true);
                     } else if (position == sendUploadProgressRow) {
-                        textCheckCell.setTextAndCheck("Send typing & upload status", ExteraConfig.sendUploadProgress, true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("SendUploadProgress", R.string.SendUploadProgress), ExteraConfig.sendUploadProgress, true);
                     } else if (position == sendOfflinePacketAfterOnlineRow) {
-                        textCheckCell.setTextAndCheck("Immediate offline after online β", ExteraConfig.sendOfflinePacketAfterOnline, true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("SendOfflinePacketAfterOnline", R.string.SendOfflinePacketAfterOnline) + " β", ExteraConfig.sendOfflinePacketAfterOnline, true);
                     } else if (position == markReadAfterSendRow) {
-                        textCheckCell.setTextAndCheck("Send read status after reply β", ExteraConfig.markReadAfterSend, true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("MarkReadAfterSend", R.string.MarkReadAfterSend) + " β", ExteraConfig.markReadAfterSend, true);
                     } else if (position == useScheduledMessagesRow) {
-                        textCheckCell.setTextAndCheck("Schedule messages β", ExteraConfig.useScheduledMessages, true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("UseScheduledMessages", R.string.UseScheduledMessages) + " β", ExteraConfig.useScheduledMessages, true);
                     } else if (position == keepDeletedMessagesRow) {
-                        textCheckCell.setTextAndCheck("Keep deleted messages β", ExteraConfig.keepDeletedMessages, true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("KeepDeletedMessages", R.string.KeepDeletedMessages) + " β", ExteraConfig.keepDeletedMessages, true);
                     } else if (position == keepMessagesHistoryRow) {
-                        textCheckCell.setTextAndCheck("Keep edits history β", ExteraConfig.keepMessagesHistory, true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("KeepMessagesHistory", R.string.KeepMessagesHistory) + " β", ExteraConfig.keepMessagesHistory, true);
                     } else if (position == realForwardTime) {
-                        textCheckCell.setTextAndCheck("Show real forward time", ExteraConfig.realForwardTime, true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("RealForwardTime", R.string.RealForwardTime), ExteraConfig.realForwardTime, true);
                     } else if (position == showFromChannel) {
-                        textCheckCell.setTextAndCheck("Show «channel» label", ExteraConfig.showFromChannel, true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("ShowFromChannel", R.string.ShowFromChannel), ExteraConfig.showFromChannel, true);
                     } else if (position == keepAliveService) {
-                        textCheckCell.setTextAndCheck("Keep Alive Service β", ExteraConfig.keepAliveService, true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("KeepAliveService", R.string.KeepAliveService) + " β", ExteraConfig.keepAliveService, true);
                     } else if (position == walModeRow) {
-                        textCheckCell.setTextAndCheck("Enable WAL mode", ExteraConfig.walMode, true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("WALMode", R.string.WALMode), ExteraConfig.walMode, true);
                     }
                     break;
             }

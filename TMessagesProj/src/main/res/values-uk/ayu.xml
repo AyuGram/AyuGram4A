@@ -3,11 +3,11 @@
     <string name="AyuPreferences">Налаштування AyuGram</string>
 
     <string name="GhostEssentialsHeader">Налаштування режиму привида</string>
-    <string name="SendReadPackets">Відправляти статус "Прочитано"</string>
-    <string name="SendOnlinePackets">Відправляти статус "Онлайн"</string>
-    <string name="SendUploadProgress">Відправляти статуси "друкую" &amp; "відвантажую"</string>
+    <string name="SendReadPackets">Відправляти статус «прочитано»</string>
+    <string name="SendOnlinePackets">Відправляти статус «онлайн»</string>
+    <string name="SendUploadProgress">Відправляти статуси «друкую» &amp; «відвантажую»</string>
     <string name="SendOfflinePacketAfterOnline">Офлайн одразу після онлайну</string>
-    <string name="MarkReadAfterSend">Відправляти статус "Прочитано" після відповіді</string>
+    <string name="MarkReadAfterSend">Відправляти статус «прочитано» після відповіді</string>
     <string name="UseScheduledMessages">Планувати повідомлення</string>
 
     <string name="SpyEssentialsHeader">Налаштування шпигунства</string>

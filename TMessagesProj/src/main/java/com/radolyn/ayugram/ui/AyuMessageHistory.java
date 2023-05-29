@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.radolyn.ayugram.database.entities.EditedMessage;
 import com.radolyn.ayugram.messages.AyuMessagesController;
 
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
@@ -39,8 +40,6 @@ public class AyuMessageHistory extends BaseFragment implements NotificationCente
     private final List<EditedMessage> messages;
     private final int rowCount;
     private RecyclerListView listView;
-    private AyuMessageHistory.ListAdapter adapter;
-    private LinearLayoutManager layoutManager;
 
     public AyuMessageHistory(long userId, MessageObject messageObject) {
         var messagesController = AyuMessagesController.getInstance();
@@ -61,7 +60,7 @@ public class AyuMessageHistory extends BaseFragment implements NotificationCente
         } else if (peer instanceof TLRPC.Chat) {
             name = ((TLRPC.Chat) peer).title;
         } else {
-            name = "Edits history";
+            name = LocaleController.getString("EditsHistoryTitle", R.string.EditsHistoryTitle);
         }
 
         actionBar.setBackButtonImage(R.drawable.ic_ab_back);
@@ -84,6 +83,7 @@ public class AyuMessageHistory extends BaseFragment implements NotificationCente
         listView = new RecyclerListView(context);
         listView.setItemAnimator(null);
         listView.setLayoutAnimation(null);
+        LinearLayoutManager layoutManager;
         listView.setLayoutManager(layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false) {
             @Override
             public boolean supportsPredictiveItemAnimations() {
@@ -92,6 +92,7 @@ public class AyuMessageHistory extends BaseFragment implements NotificationCente
         });
         listView.setVerticalScrollBarEnabled(true);
         frameLayout.addView(listView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT));
+        ListAdapter adapter;
         listView.setAdapter(adapter = new AyuMessageHistory.ListAdapter(context));
 
         return fragmentView;

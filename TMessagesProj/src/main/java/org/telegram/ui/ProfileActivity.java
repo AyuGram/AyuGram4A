@@ -7548,11 +7548,11 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         fallbackImage.setImage(ImageLocation.getForPhoto(smallSize, getUserInfo().fallback_photo), "50_50", (Drawable) null, 0, null, UserConfig.getInstance(currentAccount).getCurrentUser(), 0);
                     }
                 } else {
-                    newString2 = LocaleController.getString("Online", R.string.Online);
-                }
-
-                if (!ExteraConfig.sendReadPackets || ExteraConfig.sendOfflinePacketAfterOnline) {
-                    newString2 = "likely offline";
+                    if (!ExteraConfig.sendReadPackets || ExteraConfig.sendOfflinePacketAfterOnline) {
+                        newString2 = LocaleController.getString("LikelyOfflineStatus", R.string.LikelyOfflineStatus);
+                    } else {
+                        newString2 = LocaleController.getString("Online", R.string.Online);
+                    }
                 }
             } else if (user.id == 333000 || user.id == 777000 || user.id == 42777) {
                 newString2 = LocaleController.getString("ServiceNotifications", R.string.ServiceNotifications);
