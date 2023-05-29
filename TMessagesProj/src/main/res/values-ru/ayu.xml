@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="AyuPreferences">Настройки AyuGram</string>
 
+    <string name="GhostEssentialsHeader">Режим призрака</string>
+    <string name="SendReadPackets">Помечать сообщения прочитанными</string>
+    <string name="SendOnlinePackets">Отправлять онлайн статус</string>
+    <string name="SendUploadProgress">Отправлять "печатает" &amp; "загружает"</string>
+    <string name="SendOfflinePacketAfterOnline">Отправлять "офлайн" после появления в сети</string>
+    <string name="MarkReadAfterSend">Читать после ответа</string>
+    <string name="UseScheduledMessages">Использовать отложку</string>
+
+    <string name="SpyEssentialsHeader">Режим шпиона</string>
+    <string name="KeepDeletedMessages">Сохранять удалённые сообщения</string>
+    <string name="KeepMessagesHistory">Сохранять историю редактирования</string>
+
+    <string name="QoLTogglesHeader">Полезные фичи</string>
+    <string name="RealForwardTime">Показывать время отправки пересланного сообщения</string>
+    <string name="ShowFromChannel">Показывать надпись «канал»</string>
+    <string name="KeepAliveService">Работать в фоне</string>
+    <string name="WALMode">Включить WAL режим</string>
+
+    <string name="CustomizationHeader">Кастомизация</string>
+    <string name="DeletedMarkText">Метка удалённого сообщения</string>
+
+    <string name="EditsHistoryTitle">История редактирования</string>
+    <string name="EditsHistoryMenuText">История</string>
+    <string name="LikelyOfflineStatus">оффлайн ?</string>
 </resources>

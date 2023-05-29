@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="AyuPreferences">Ayu Preferences</string>
+    <string name="AyuPreferences">AyuGram Preferences</string>
 
     <string name="GhostEssentialsHeader">Ghost essentials</string>
     <string name="SendReadPackets">Send read status</string>
@@ -25,5 +25,5 @@
 
     <string name="EditsHistoryTitle">Edits history</string>
     <string name="EditsHistoryMenuText">History</string>
-    <string name="LikelyOfflineStatus">likely offline</string>
+    <string name="LikelyOfflineStatus">offline ?</string>
 </resources>
