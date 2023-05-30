@@ -15,9 +15,9 @@
     <string name="RealForwardTime">Показывать время отправки пересланного сообщения</string>
     <string name="ShowFromChannel">Показывать надпись «канал»</string>
     <string name="KeepAliveService">Работать в фоне</string>
-    <string name="EnableAds">Enable ads</string>
-    <string name="CleanDatabase">Clean database</string>
-    <string name="CleanDatabaseNotification">AyuGram database cleaned</string>
+    <string name="EnableAds">Включить рекламу</string>
+    <string name="CleanDatabase">Очистить базу данных</string>
+    <string name="CleanDatabaseNotification">База сообщений AyuGram очищена</string>
     <string name="CustomizationHeader">Кастомизация</string>
     <string name="DeletedMarkText">Метка удалённого сообщения</string>
     <string name="EditsHistoryTitle">История редактирования</string>
