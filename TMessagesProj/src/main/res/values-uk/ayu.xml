@@ -15,7 +15,9 @@
     <string name="RealForwardTime">Відображення часу пересл. повідомлення</string>
     <string name="ShowFromChannel">Відображати надпис «канал»</string>
     <string name="KeepAliveService">Підтримувати службу у фоні</string>
-    <string name="WALMode">Увімкнути режим WAL</string>
+    <string name="EnableAds">Enable ads</string>
+    <string name="CleanDatabase">Clean database</string>
+    <string name="CleanDatabaseNotification">AyuGram database cleaned</string>
     <string name="CustomizationHeader">Персоналізація</string>
     <string name="DeletedMarkText">Позначка на видаленому повідомленні</string>
     <string name="EditsHistoryTitle">Історія редагувань</string>
