@@ -15,7 +15,9 @@
     <string name="RealForwardTime">Mostrar hora del mensaje reenviado</string>
     <string name="ShowFromChannel">Mostrar etiqueta de «canal»</string>
     <string name="KeepAliveService">Mantener vivo el servicio</string>
-    <string name="WALMode">Habilitar el modo WAL</string>
+    <string name="EnableAds">Enable ads</string>
+    <string name="CleanDatabase">Clean database</string>
+    <string name="CleanDatabaseNotification">AyuGram database cleaned</string>
     <string name="CustomizationHeader">Personalización</string>
     <string name="DeletedMarkText">La marca de mensaje eliminado</string>
     <string name="EditsHistoryTitle">Historial de ediciones</string>
