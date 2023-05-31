@@ -22,5 +22,6 @@
     <string name="DeletedMarkText">Позначка на видаленому повідомленні</string>
     <string name="EditsHistoryTitle">Історія редагувань</string>
     <string name="EditsHistoryMenuText">Історія</string>
+    <string name="ReadUntilMenuText">Read until</string>
     <string name="LikelyOfflineStatus">оффлайн ?</string>
 </resources>
