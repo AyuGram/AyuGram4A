@@ -22,5 +22,6 @@
     <string name="DeletedMarkText">La marca de mensaje eliminado</string>
     <string name="EditsHistoryTitle">Historial de ediciones</string>
     <string name="EditsHistoryMenuText">Historia</string>
+    <string name="ReadUntilMenuText">Read until</string>
     <string name="LikelyOfflineStatus">offline ?</string>
 </resources>
