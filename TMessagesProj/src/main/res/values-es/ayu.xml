@@ -15,13 +15,13 @@
     <string name="RealForwardTime">Mostrar hora del mensaje reenviado</string>
     <string name="ShowFromChannel">Mostrar etiqueta de «canal»</string>
     <string name="KeepAliveService">Mantener vivo el servicio</string>
-    <string name="EnableAds">Enable ads</string>
-    <string name="CleanDatabase">Clean database</string>
-    <string name="CleanDatabaseNotification">AyuGram database cleaned</string>
+    <string name="EnableAds">Habilitar anuncios</string>
+    <string name="CleanDatabase">Limpiar base de datos</string>
+    <string name="CleanDatabaseNotification">La base de datos Augram ha sido limpiada</string>
     <string name="CustomizationHeader">Personalización</string>
     <string name="DeletedMarkText">La marca de mensaje eliminado</string>
     <string name="EditsHistoryTitle">Historial de ediciones</string>
     <string name="EditsHistoryMenuText">Historia</string>
-    <string name="ReadUntilMenuText">Read until</string>
+    <string name="ReadUntilMenuText">Leer antes</string>
     <string name="LikelyOfflineStatus">offline ?</string>
 </resources>
