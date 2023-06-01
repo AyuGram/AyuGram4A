@@ -15,13 +15,13 @@
     <string name="RealForwardTime">Відображення часу пересл. повідомлення</string>
     <string name="ShowFromChannel">Відображати надпис «канал»</string>
     <string name="KeepAliveService">Підтримувати службу у фоні</string>
-    <string name="EnableAds">Enable ads</string>
-    <string name="CleanDatabase">Clean database</string>
-    <string name="CleanDatabaseNotification">AyuGram database cleaned</string>
+    <string name="EnableAds">Увімкнути рекламу</string>
+    <string name="CleanDatabase">Очистити базу даних</string>
+    <string name="CleanDatabaseNotification">Базу даних Augram очищено</string>
     <string name="CustomizationHeader">Персоналізація</string>
     <string name="DeletedMarkText">Позначка на видаленому повідомленні</string>
     <string name="EditsHistoryTitle">Історія редагувань</string>
     <string name="EditsHistoryMenuText">Історія</string>
-    <string name="ReadUntilMenuText">Read until</string>
+    <string name="ReadUntilMenuText">Прочитати до</string>
     <string name="LikelyOfflineStatus">оффлайн ?</string>
 </resources>
