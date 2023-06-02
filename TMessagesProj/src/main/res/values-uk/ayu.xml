@@ -12,16 +12,21 @@
     <string name="KeepDeletedMessages">Зберігати видалені повідомлення</string>
     <string name="KeepMessagesHistory">Зберігати історію редагувань</string>
     <string name="QoLTogglesHeader">Перемикачі QoL</string>
-    <string name="RealForwardTime">Відображення часу пересл. повідомлення</string>
+    <string name="RealForwardTime">Час написання пересл. повідомлення</string>
     <string name="ShowFromChannel">Відображати надпис «канал»</string>
     <string name="KeepAliveService">Підтримувати службу у фоні</string>
-    <string name="EnableAds">Enable ads</string>
-    <string name="CleanDatabase">Clean database</string>
-    <string name="CleanDatabaseNotification">AyuGram database cleaned</string>
+    <string name="EnableAds">Увімкнути рекламу</string>
     <string name="CustomizationHeader">Персоналізація</string>
     <string name="DeletedMarkText">Позначка на видаленому повідомленні</string>
+    <string name="ShowGhostToggleInDrawer">Показати перемикач режиму примари</string>
+    <string name="CleanDatabase">Очистити базу даних</string>
+    <string name="CleanDatabaseNotification">Базу даних Augram очищено</string>
+    <string name="EnableGhostMode">Увімкнути режим привида</string>
+    <string name="DisableGhostMode">Вимкнути режим привида</string>
+    <string name="GhostModeEnabled">Режим привида ввімкнено</string>
+    <string name="GhostModeDisabled">Режим привида вимкнено</string>
     <string name="EditsHistoryTitle">Історія редагувань</string>
     <string name="EditsHistoryMenuText">Історія</string>
-    <string name="ReadUntilMenuText">Read until</string>
+    <string name="ReadUntilMenuText">Прочитати до</string>
     <string name="LikelyOfflineStatus">оффлайн ?</string>
 </resources>
