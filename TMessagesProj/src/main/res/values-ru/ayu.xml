@@ -16,10 +16,15 @@
     <string name="ShowFromChannel">Показывать надпись «канал»</string>
     <string name="KeepAliveService">Работать в фоне</string>
     <string name="EnableAds">Включить рекламу</string>
-    <string name="CleanDatabase">Очистить базу данных</string>
-    <string name="CleanDatabaseNotification">База сообщений AyuGram очищена</string>
     <string name="CustomizationHeader">Кастомизация</string>
     <string name="DeletedMarkText">Метка удалённого сообщения</string>
+    <string name="ShowGhostToggleInDrawer">Показывать переключатель режима призрака</string>
+    <string name="CleanDatabase">Очистить базу данных</string>
+    <string name="CleanDatabaseNotification">База сообщений AyuGram очищена</string>
+    <string name="EnableGhostMode">Включить Призрака</string>
+    <string name="DisableGhostMode">Выключить Призрака</string>
+    <string name="GhostModeEnabled">Режим Призрака включён</string>
+    <string name="GhostModeDisabled">Режим Призрака выключен</string>
     <string name="EditsHistoryTitle">История редактирования</string>
     <string name="EditsHistoryMenuText">История</string>
     <string name="ReadUntilMenuText">Прочитать до</string>
