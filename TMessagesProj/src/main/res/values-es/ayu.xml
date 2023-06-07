@@ -18,8 +18,11 @@
     <string name="EnableAds">Habilitar anuncios</string>
     <string name="CustomizationHeader">Personalización</string>
     <string name="DeletedMarkText">La marca de mensaje eliminado</string>
+    <string name="EditedMarkText">Edited mark</string>
     <string name="ShowGhostToggleInDrawer">Mostrar interruptor de modo fantasma</string>
+    <!-- Debug -->
     <string name="CleanDatabase">Limpiar base de datos</string>
+    <string name="WALMode">Enable WAL mode</string>
     <string name="CleanDatabaseNotification">La base de datos Augram ha sido limpiada</string>
     <string name="EnableGhostMode">Activar fantasma</string>
     <string name="DisableGhostMode">Deshabilitar fantasma</string>
@@ -28,5 +31,7 @@
     <string name="EditsHistoryTitle">Historial de ediciones</string>
     <string name="EditsHistoryMenuText">Historia</string>
     <string name="ReadUntilMenuText">Leer antes</string>
+    <string name="ForwardsRestrictedInfoDeleted">Forwarding of deleted message is not supported.</string>
     <string name="LikelyOfflineStatus">offline ?</string>
+    <string name="GhostModeShortcut">Enter with Ghost</string>
 </resources>
