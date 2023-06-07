@@ -18,8 +18,11 @@
     <string name="EnableAds">Увімкнути рекламу</string>
     <string name="CustomizationHeader">Персоналізація</string>
     <string name="DeletedMarkText">Позначка на видаленому повідомленні</string>
+    <string name="EditedMarkText">Позначка «ред.»</string>
     <string name="ShowGhostToggleInDrawer">Показати перемикач режиму примари</string>
+    <!-- Debug -->
     <string name="CleanDatabase">Очистити базу даних</string>
+    <string name="WALMode">Увімкнути режим WAL</string>
     <string name="CleanDatabaseNotification">Базу даних Augram очищено</string>
     <string name="EnableGhostMode">Увімкнути режим привида</string>
     <string name="DisableGhostMode">Вимкнути режим привида</string>
@@ -28,5 +31,7 @@
     <string name="EditsHistoryTitle">Історія редагувань</string>
     <string name="EditsHistoryMenuText">Історія</string>
     <string name="ReadUntilMenuText">Прочитати до</string>
+    <string name="ForwardsRestrictedInfoDeleted">Пересилання видалених повідомлень не підтримується.</string>
     <string name="LikelyOfflineStatus">оффлайн ?</string>
+    <string name="GhostModeShortcut">Увійти з режимом привида</string>
 </resources>
