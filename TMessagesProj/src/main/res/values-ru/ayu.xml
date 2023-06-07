@@ -5,7 +5,7 @@
     <string name="SendReadPackets">Помечать сообщения прочитанными</string>
     <string name="SendOnlinePackets">Отправлять «онлайн» статус</string>
     <string name="SendUploadProgress">Отправлять «печатает» &amp; «загружает»</string>
-    <string name="SendOfflinePacketAfterOnline">Отправлять «оффлайн» после появления в сети</string>
+    <string name="SendOfflinePacketAfterOnline">Отправлять «офлайн» после появления в сети</string>
     <string name="MarkReadAfterSend">Читать после ответа</string>
     <string name="UseScheduledMessages">Использовать отложку</string>
     <string name="SpyEssentialsHeader">Режим шпиона</string>
@@ -18,8 +18,11 @@
     <string name="EnableAds">Включить рекламу</string>
     <string name="CustomizationHeader">Кастомизация</string>
     <string name="DeletedMarkText">Метка удалённого сообщения</string>
+    <string name="EditedMarkText">Метка изменённого сообщения</string>
     <string name="ShowGhostToggleInDrawer">Показывать переключатель режима призрака</string>
+    <!-- Debug -->
     <string name="CleanDatabase">Очистить базу данных</string>
+    <string name="WALMode">Включить WAL режим</string>
     <string name="CleanDatabaseNotification">База сообщений AyuGram очищена</string>
     <string name="EnableGhostMode">Включить Призрака</string>
     <string name="DisableGhostMode">Выключить Призрака</string>
@@ -28,5 +31,7 @@
     <string name="EditsHistoryTitle">История редактирования</string>
     <string name="EditsHistoryMenuText">История</string>
     <string name="ReadUntilMenuText">Прочитать до</string>
-    <string name="LikelyOfflineStatus">оффлайн ?</string>
+    <string name="ForwardsRestrictedInfoDeleted">Пересылка удаленного сообщения не поддерживается.</string>
+    <string name="LikelyOfflineStatus">офлайн ?</string>
+    <string name="GhostModeShortcut">Войти с Призраком</string>
 </resources>
