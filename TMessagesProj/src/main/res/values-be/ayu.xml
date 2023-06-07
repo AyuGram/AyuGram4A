@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="AyuPreferences">Перавагі AyuGram</string>
+    <string name="GhostEssentialsHeader">Прывідныя прадметы першай неабходнасці</string>
+    <string name="SendReadPackets">Адправіць статус чытання</string>
+    <string name="SendOnlinePackets">Адправіць статус онлайн</string>
+    <string name="SendUploadProgress">Адправіць ўводзіць &amp; статус загрузкі</string>
+    <string name="SendOfflinePacketAfterOnline">Неадкладны пераход у аўтаномны рэжым пасля выхаду ў Інтэрнэт</string>
+    <string name="MarkReadAfterSend">Адправіць статус чытання пасля адказу</string>
+    <string name="UseScheduledMessages">Расклад паведамленняў</string>
+    <string name="SpyEssentialsHeader">Прадметы першай неабходнасці для шпіянажу</string>
+    <string name="KeepDeletedMessages">Захаваць выдаленыя паведамленні</string>
+    <string name="KeepMessagesHistory">Захоўвайце гісторыю правак</string>
+    <string name="QoLTogglesHeader">Карысныя фічы</string>
+    <string name="RealForwardTime">Паказваць рэальны час перамоткі наперад</string>
+    <string name="ShowFromChannel">Паказаць пазнаку «канал»</string>
+    <string name="KeepAliveService">Падтрымлівайце службу ў працоўным стане</string>
+    <string name="EnableAds">Уключыць рэкламу</string>
+    <string name="CustomizationHeader">Наладжваньне</string>
+    <string name="DeletedMarkText">Аддаленая адзнака</string>
+    <string name="EditedMarkText">Edited mark</string>
+    <string name="ShowGhostToggleInDrawer">Перамыкач рэжыму адлюстравання прывіда</string>
+    <!-- Debug -->
+    <string name="CleanDatabase">Чыстая база дадзеных</string>
+    <string name="WALMode">Enable WAL mode</string>
+    <string name="CleanDatabaseNotification">База дадзеных AyuGram ачышчана</string>
+    <string name="EnableGhostMode">Ўключыць прывід</string>
+    <string name="DisableGhostMode">Адключыць прывіда</string>
+    <string name="GhostModeEnabled">Прывідны рэжым уключаны</string>
+    <string name="GhostModeDisabled">Прывідны рэжым адключаны</string>
+    <string name="EditsHistoryTitle">Гісторыя зменаў</string>
+    <string name="EditsHistoryMenuText">Гісторыя</string>
+    <string name="ReadUntilMenuText">Чытайце пакуль</string>
+    <string name="ForwardsRestrictedInfoDeleted">Forwarding of deleted message is not supported.</string>
+    <string name="LikelyOfflineStatus">афлайн ?</string>
+    <string name="GhostModeShortcut">Enter with Ghost</string>
+</resources>
