@@ -18,8 +18,11 @@
     <string name="EnableAds">Habilitar anúncios</string>
     <string name="CustomizationHeader">Personalização</string>
     <string name="DeletedMarkText">Marca da exclusão</string>
+    <string name="EditedMarkText">Edited mark</string>
     <string name="ShowGhostToggleInDrawer">Mostrar switch do modo Ghost</string>
+    <!-- Debug -->
     <string name="CleanDatabase">Limpar banco de dados</string>
+    <string name="WALMode">Enable WAL mode</string>
     <string name="CleanDatabaseNotification">Banco de dados do AyuGram limpo</string>
     <string name="EnableGhostMode">Habilitar Ghost</string>
     <string name="DisableGhostMode">Desabilitar Ghost</string>
@@ -28,5 +31,7 @@
     <string name="EditsHistoryTitle">Histórico de edições</string>
     <string name="EditsHistoryMenuText">Histórico</string>
     <string name="ReadUntilMenuText">Lido até</string>
+    <string name="ForwardsRestrictedInfoDeleted">Forwarding of deleted message is not supported.</string>
     <string name="LikelyOfflineStatus">offline ?</string>
+    <string name="GhostModeShortcut">Enter with Ghost</string>
 </resources>
