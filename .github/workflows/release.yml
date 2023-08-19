@@ -1,6 +1,9 @@
 name: Build release APK
+
 on:
+  workflow_dispatch:
   push:
+    branches: [ "rewrite" ]
 
 jobs:
   build:
@@ -11,14 +14,15 @@ jobs:
       CCACHE_MAXSIZE: "10G"
       CCACHE_HARDLINK: "true"
     steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: recursive
-          fetch-depth: 0
-          token: ${{ secrets.GH_TOKEN }}
-
-      - uses: DamianReeves/write-file-action@master
-        with:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        submodules: 'recursive'
+        fetch-depth: 0
+        token: ${{ secrets.GH_TOKEN }}
+        
+    - uses: DamianReeves/write-file-action@master
+      with:
           path: ./API_KEYS
           contents: |
             APP_ID = 6
@@ -30,37 +34,38 @@ jobs:
             SIGNING_KEY_STORE_PASSWORD = ${{ secrets.CERT_KEY }}
           write-mode: overwrite
 
-      - name: Update packages
-        run: sudo apt-get update
+    - name: Update packages
+      run: sudo apt-get update
 
-      - name: Setup Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-          cache: 'gradle'
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+        cache: 'gradle'
 
-      - name: Cache Gradle Build
-        uses: actions/cache@v3
-        with:
-          path: |
+    - name: Cache Gradle Build
+      uses: actions/cache@v3
+      with:
+        path: |
             ~/.gradle/caches/build-cache-*
             ~/.gradle/buildOutputCleanup/cache.properties
-          key: gradle-builds-${{ github.sha }}
-          restore-keys: |
+        key: gradle-builds-${{ github.sha }}
+        restore-keys: |
             gradle-builds
 
-      - name: Set up ccache
-        uses: hendrikmuhs/ccache-action@v1.2
-        with:
-          key: ccache
-          restore-keys: ccache
+    - name: Set up ccache
+      uses: hendrikmuhs/ccache-action@v1.2
+      with:
+        key: ccache
+        restore-keys: ccache
 
-      - name: Setup Android SDK Tools
-        uses: android-actions/setup-android@v2
 
-      - name: Prepare Environment
-        run: |
+    - name: Setup Android SDK Tools
+      uses: android-actions/setup-android@v2
+
+    - name: Prepare Environment
+      run: |
           echo "Removing large packages"
           sudo apt-get update
           sudo apt-get remove -y '^llvm-.*'
@@ -82,14 +87,147 @@ jobs:
           
           sudo apt-get install bison gcc make curl ninja-build ccache -y
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew      
+        
+    - name: Build with Gradle
+      run: |
+        [ $(du -s ~/.gradle/wrapper | awk '{ print $1 }') -gt 250000 ] && rm -rf ~/.gradle/wrapper/* || true
+        find ~/.gradle/caches -exec touch -d "2 days ago" {} + || true
+        echo 'org.gradle.caching=true' >> gradle.properties
+        echo 'org.gradle.parallel=true' >> gradle.properties
+        echo 'org.gradle.vfs.watch=true' >> gradle.properties
+        echo 'org.gradle.jvmargs=-Xmx4096m' >> gradle.properties
+        echo 'android.native.buildOutput=verbose' >> gradle.properties
+        echo 'buildCache { local { removeUnusedEntriesAfterDays = 1 } }' >> settings.gradle.kts
+        ./gradlew :TMessagesProj:assembleRelease
+          
+    - uses: actions/upload-artifact@v2
+      name: Upload apk (armeabi-v8a)
+      with:
+          name: AyuGram-armeabi-v8a
+          path: TMessagesProj/build/outputs/apk/arm64/release/ayuGram-arm64-v8a-*.apk
+    
+    - uses: actions/upload-artifact@v2
+      name: Upload apk (armeabi-v7a)
+      with:
+          name: AyuGram-armeabi-v7a
+          path: TMessagesProj/build/outputs/apk/armv7/release/ayuGram-armeabi-v7a-*.apk
+          
+    - uses: actions/upload-artifact@v2
+      name: Upload apk (x86_64)
+      with:
+          name: AyuGram-x86_64
+          path: TMessagesProj/build/outputs/apk/x64/release/ayuGram-x86_64-*.apk
+          
+    - uses: actions/upload-artifact@v2
+      name: Upload apk (x86)
+      with:
+          name: AyuGram-x86
+          path: TMessagesProj/build/outputs/apk/x86/release/ayuGram-x86-*.apk
 
-      - name: Build with Gradle
-        run: ./gradlew assembleAfatRelease
+    - uses: actions/upload-artifact@v2
+      name: Upload apk (x86)
+      with:
+          name: AyuGram-universal
+          path: TMessagesProj/build/outputs/apk/afat/release/ayuGram-universal-*.apk
 
-      - name: Upload
-        uses: actions/upload-artifact@v3
+  publish:
+    name: Publish Release
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Donwload Artifacts
+        uses: actions/download-artifact@v2
         with:
-          name: Release APK
-          path: TMessagesProj/build/outputs/apk/afat/release/*.apk
+          path: artifacts
+      - name: Release
+        run: |
+          wget -O ghr.tar.gz https://github.com/tcnksm/ghr/releases/download/v0.13.0/ghr_v0.13.0_linux_amd64.tar.gz
+          tar -xvf ghr.tar.gz
+          mv ghr*linux_amd64/ghr .
+          mkdir apks
+          find artifacts -name "*.apk" -exec cp {} apks \;
+          ./ghr -delete -t "${{ github.token }}" -n "Ayugram CI" apks
+
+  upload:
+    name: Upload Apks
+    runs-on: ubuntu-latest
+    needs:
+      - build
+      - telegram-bot-api
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Download Artifacts
+        uses: actions/download-artifact@master
+        with:
+          path: artifacts
+      - name: Download Telegram Bot API Binary
+        uses: actions/download-artifact@master
+        with:
+          name: telegram-bot-api-binary
+          path: .
+      - name: Send to Telegram
+        run: |
+          chmod +x telegram-bot-api-binary
+          function start() {
+            ./telegram-bot-api-binary --api-id=6 --api-hash=eb06d4abfb49dc3eeb1aeb98ae0f581e --local 2>&1 > /dev/null &
+          }
+          start
+          curl http://127.0.0.1:8081/ || start
+          curl http://127.0.0.1:8081/ || start
+          curl http://127.0.0.1:8081/ || start
+          # send release via telegram bot api
+          export arm64=$(find artifacts -name "ayuGram-arm64-v8a-*.apk")
+          export arm7=$(find artifacts -name "ayuGram-armeabi-v7a-*.apk")
+          export x64=$(find artifacts -name "ayuGram-x86_64-*.apk")
+          export x86=$(find artifacts -name "ayuGram-x86-*.apk")
+          export uni=$(find artifacts -name "ayuGram-universal-*.apk")
+
+          echo $arm64
+          echo $arm7
+          echo $x64
+          echo $x86
+          echo $uni
+
+          curl --http0.9 http://127.0.0.1:8081/bot${{ secrets.TELEGRAM_TOKEN }}/sendMediaGroup --form-string chat_id=${{ secrets.TELEGRAM_TO }} --form apk1=@"${arm64}" --form apk2=@"${arm7}" --form apk3=@"${x64}" --form apk4=@"${x86}" --form apk5=@"${uni}" --form-string media="[{\"type\": \"document\",\"media\": \"attach://apk1\",\"caption\": \"\",\"parse_mode\": \"Markdown\"},{\"type\": \"document\",\"media\": \"attach://apk2\",\"caption\": \"\",\"parse_mode\": \"Markdown\"},{\"type\": \"document\",\"media\": \"attach://apk3\",\"caption\": \"\",\"parse_mode\": \"Markdown\"},{\"type\": \"document\",\"media\": \"attach://apk4\",\"caption\": \"\",\"parse_mode\": \"Markdown\"},{\"type\": \"document\",\"media\": \"attach://apk5\",\"caption\": \"If you don't know what to download - download the universal one.\",\"parse_mode\": \"Markdown\"}]" --verbose >/dev/null
+
+          pkill telegram-bot
+  telegram-bot-api:
+    name: Telegram Bot API
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Clone Telegram Bot API
+        run: |
+          git clone --recursive https://github.com/tdlib/telegram-bot-api.git
+          git status telegram-bot-api >> telegram-bot-api-status
+      - name: Cache Bot API Binary
+        id: cache-bot-api
+        uses: actions/cache@v2
+        with:
+          path: telegram-bot-api-binary
+          key: CI-telegram-bot-api-${{ hashFiles('telegram-bot-api-status') }}
+      - name: Compile Telegram Bot API
+        if: steps.cache-bot-api.outputs.cache-hit != 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install make git zlib1g-dev libssl-dev gperf cmake g++
+          cd telegram-bot-api
+          rm -rf build
+          mkdir build
+          cd build
+          cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=.. ..
+          cmake --build . --target install -j$(nproc)
+          cd ../..
+          ls -l telegram-bot-api/bin/telegram-bot-api*
+          cp telegram-bot-api/bin/telegram-bot-api telegram-bot-api-binary
+      - name: Upload Binary
+        uses: actions/upload-artifact@master
+        with:
+          name: telegram-bot-api-binary
+          path: telegram-bot-api-binary
