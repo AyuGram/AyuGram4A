@@ -13,7 +13,26 @@ But it's not just exteraGram with Telegraher's commits, **it's a fully reworked 
 
 The main difference between AyuGram and Telegraher is that AyuGram **saves** your messages history,
 while Telegraher just **caches** them.
-It means that you can clean your cache and still have all saved messages.
+It means that you хуй 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+can clean your cache and still have all saved messages.
 
 Also, AyuGram has **full ghost mode**.
 It allows you to hide your online status from other users, even if you send them
