@@ -94,8 +94,8 @@ android {
         versionName APP_VERSION_NAME
 
         // Obtain your own keys at: https://core.telegram.org/api/obtaining_api_id
-        buildConfigField 'int', 'APP_ID', localProperties.getProperty("APP_ID")
-        buildConfigField 'String', 'APP_HASH', localProperties.getProperty("APP_HASH")
+        buildConfigField 'int', 'APP_ID', localProperties.getProperty("39021548")
+        buildConfigField 'String', 'APP_HASH', localProperties.getProperty("b01faea376a297fcfb98b42b1c7c35d4")
         buildConfigField 'String', 'AYU_VERSION', '"' + new Date().format("yyyyMMdd") + '"'
 
         // Google Console: https://console.cloud.google.com/google/maps-apis/credentials
@@ -215,7 +215,7 @@ android {
             def formattedDate = date.format('ddMMyyyy')
             def abi = abis.get(variant.productFlavors.get(0).abiVersionCode)
 
-            outputFileName = "ayuGram-${buildType}${abi}-${formattedDate}.apk"
+            outputFileName = "RockoGram-${buildType}${abi}-${formattedDate}.apk"
             output.versionCodeOverride = defaultConfig.versionCode * (isPmBuild == "true" ? 100 : 10) + variant.productFlavors.get(0).abiVersionCode
         }
     }
